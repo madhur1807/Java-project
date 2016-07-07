@@ -8,21 +8,9 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author Chirag
- */
 public class ResetPass extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ResetPass
-     */
     public ResetPass() {
         initComponents();
     }
@@ -121,11 +109,11 @@ public class ResetPass extends javax.swing.JFrame {
             String user=jTextField1.getText();
             String newpass=jTextField2.getText();
             String phon=jTextField3.getText();
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            Class.forName("com.mysql.jdbc.Driver");
             
             Connection con=null;
             
-            con = DriverManager.getConnection("jdbc:sqlserver://TURINGMACHINE;database=AccountsInfo;user=sa;password=GalaxyS4;");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airline", "root" ,"");
             PreparedStatement st=con.prepareStatement("Update UserDetails Set Password =? where Username=? and Phone=?");
             st.setString(1,newpass); 
             st.setString(2,user);  

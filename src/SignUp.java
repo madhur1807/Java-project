@@ -6,16 +6,6 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Chirag
- */
 public class SignUp extends javax.swing.JFrame {
 
     /**
@@ -163,10 +153,10 @@ public class SignUp extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            Connection con = DriverManager.getConnection("jdbc:sqlserver://TURINGMACHINE;database=AccountsInfo;user=sa;password=GalaxyS4;");
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airline", "root" ,"");
             String pass= new String(jPasswordField1.getPassword());
-            PreparedStatement st= con.prepareStatement("Insert into userdetails values(?,?,?,?,?)");
+           PreparedStatement st= con.prepareStatement("Insert into user_details values(?,?,?,?,?)");
             st.setString(1,jTextField1.getText());
             st.setString(2,jTextField2.getText());
             st.setString(3,pass);
