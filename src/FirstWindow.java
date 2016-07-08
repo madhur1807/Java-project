@@ -10,6 +10,7 @@ import java.sql.Statement;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.xml.bind.DatatypeConverter;
 
 /*
@@ -214,6 +215,12 @@ public class FirstWindow extends javax.swing.JFrame {
             String login=jTextField2.getText();
             char pass[]=jPasswordField2.getPassword();
             String key= new String(pass);
+            if(login.equals("") || key.equals(""))
+            {
+                 this.dispose();
+                 new UserName_Conflict().setVisible(true);
+            }
+     
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
@@ -252,11 +259,8 @@ public class FirstWindow extends javax.swing.JFrame {
                 this.dispose();
                 new Admin().setVisible(true);
             }
-            else if( login != "user" ) 
-            {   
-                this.dispose();
-               
-            }
+                
+            
             }
         } catch (SQLException ex) {
             Logger.getLogger(FirstWindow.class.getName()).log(Level.SEVERE, null, ex);
