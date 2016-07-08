@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 
 public class FlightSchedules_Admin extends javax.swing.JFrame {
 
@@ -236,7 +237,9 @@ public class FlightSchedules_Admin extends javax.swing.JFrame {
                         
                         String source = (String)jComboBox1.getSelectedItem();
                         String destination = (String)jComboBox2.getSelectedItem();
-                       
+                       if (source.equals(destination)){
+                       JOptionPane.showMessageDialog(this,"Check source and destination");
+                               }
                         try {
                             Class.forName("com.mysql.jdbc.Driver");
                         } catch (ClassNotFoundException ex) {

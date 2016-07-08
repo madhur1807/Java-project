@@ -1,3 +1,13 @@
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -184,12 +194,66 @@ public class cacel_flight extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-        // TODO add your handling code here:
+ 
+                        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code try {
+                        try{
+                        String id = (String)jComboBox1.getSelectedItem();
+                         
+                        try {
+                            Class.forName("com.mysql.jdbc.Driver");
+                        } catch (ClassNotFoundException ex) {
+                            Logger.getLogger(FirstWindow.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                        Connection con= null;
+                        
+                        try {
+                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airline", "root" ,"");
+                        } catch (SQLException ex) {
+                            Logger.getLogger(FirstWindow.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                        
+                        Statement st = null ;
+                        try {
+                            
+                            st = con.createStatement();
+                        } catch (SQLException ex) {
+                            Logger.getLogger(FirstWindow.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                        
+                        ResultSet rs = null;
+                        try {
+                            String load = "Select * from flight_details where Flight_ID='" + id + "' ";
+                            rs = st.executeQuery(load);
+                        } catch (SQLException ex) {
+                            Logger.getLogger(FlightSchedules_Admin.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                        while (rs.next())
+                        {
+                            
+                                String item_text_id = rs.getString("Flight_ID");
+                                    try {
+                                        String src = rs.getString("source");
+                                        jTextField1.setText(src);
+                                        String dest = rs.getString("destination");
+                                        jTextField2.setText(dest);
+                                        String arr = rs.getString("arrival");
+                                        jTextField3.setText(arr);
+                                        String depart = rs.getString("departure");
+                                        jTextField4.setText(depart);
+                                    } catch (SQLException ex) {
+                                        Logger.getLogger(FlightSchedules_Admin.class.getName()).log(Level.SEVERE, null, ex);
+                                    }
+                                          
+                            
+                        }
+                        
+                    } catch (SQLException ex) {
+                Logger.getLogger(FlightSchedules_Admin.class.getName()).log(Level.SEVERE, null, ex);
+            }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
