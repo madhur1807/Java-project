@@ -25,10 +25,10 @@ DROP TABLE IF EXISTS `flight_details`;
 CREATE TABLE `flight_details` (
   `source` varchar(20) DEFAULT NULL,
   `destination` varchar(20) DEFAULT NULL,
-  `date` varchar(20) DEFAULT NULL,
   `arrival` varchar(10) DEFAULT NULL,
   `departure` varchar(10) DEFAULT NULL,
-  `fare` int(5) DEFAULT NULL
+  `fare` int(5) DEFAULT NULL,
+  `Flight_ID` varchar(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -38,6 +38,7 @@ CREATE TABLE `flight_details` (
 
 LOCK TABLES `flight_details` WRITE;
 /*!40000 ALTER TABLE `flight_details` DISABLE KEYS */;
+INSERT INTO `flight_details` VALUES ('Delhi','Mumabai','1800','1500',3000,'F001');
 /*!40000 ALTER TABLE `flight_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,7 +64,7 @@ CREATE TABLE `user_details` (
 
 LOCK TABLES `user_details` WRITE;
 /*!40000 ALTER TABLE `user_details` DISABLE KEYS */;
-INSERT INTO `user_details` VALUES ('Madhur','Madhur1807','Aset','madhurmittal','1234567890'),('chirag bansal','chiraandbhd','ch','jbdb wqh','7894561230');
+INSERT INTO `user_details` VALUES ('Madhur','Madhur1807','Aset','madhurmittal','1234567890'),('chirag bansal','chiraandbhd','ch','jbdb wqh','7894561230'),('Chirag Bansal','chirag2120787','123456','chirag2120@gmail.com','9540002177');
 /*!40000 ALTER TABLE `user_details` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -76,4 +77,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-07-07 19:19:02
+-- Dump completed on 2016-07-08  5:14:55

@@ -96,6 +96,11 @@ public class FlightSchedules_Admin extends javax.swing.JFrame {
         });
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mumbai", "Delhi", "Jaipur", "Bangalore" }));
+        jComboBox1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox1ItemStateChanged(evt);
+            }
+        });
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -140,7 +145,6 @@ public class FlightSchedules_Admin extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(82, 82, 82)
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -218,13 +222,13 @@ public class FlightSchedules_Admin extends javax.swing.JFrame {
                         
                         String source = (String)jComboBox1.getSelectedItem();
                         String destination = (String)jComboBox2.getSelectedItem();
-                        Statement st=null;
-                        Connection con=null;
+                       
                         try {
                             Class.forName("com.mysql.jdbc.Driver");
                         } catch (ClassNotFoundException ex) {
                             Logger.getLogger(FirstWindow.class.getName()).log(Level.SEVERE, null, ex);
                         }
+                        Connection con= null;
                         
                         try {
                             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airline", "root" ,"");
@@ -232,6 +236,7 @@ public class FlightSchedules_Admin extends javax.swing.JFrame {
                             Logger.getLogger(FirstWindow.class.getName()).log(Level.SEVERE, null, ex);
                         }
                         
+                        Statement st = null ;
                         try {
                             
                             st = con.createStatement();
@@ -241,18 +246,18 @@ public class FlightSchedules_Admin extends javax.swing.JFrame {
                         
                         ResultSet rs = null;
                         try {
-                            rs = st.executeQuery("Select * from flight_details ");
+                            String load = "Select * from flight_details where source='" + source + "' "  ;
+                            rs = st.executeQuery(load);
                         } catch (SQLException ex) {
                             Logger.getLogger(FlightSchedules_Admin.class.getName()).log(Level.SEVERE, null, ex);
                         }
                         while (rs.next())
                         {
-                            try {
+                            
                                 String item_text_src = rs.getString("source");
                                 String item_text_des = rs.getString("destination");
                                 
-                                if(source.equalsIgnoreCase((String) item_text_src)&& destination.equalsIgnoreCase((String) item_text_des))
-                                {
+                                
                                     try {
                                         String arriv = rs.getString("arrival");
                                         jTextField1.setText(arriv);
@@ -265,9 +270,7 @@ public class FlightSchedules_Admin extends javax.swing.JFrame {
                                     } catch (SQLException ex) {
                                         Logger.getLogger(FlightSchedules_Admin.class.getName()).log(Level.SEVERE, null, ex);
                                     }
-                                }          } catch (SQLException ex) {
-                                    Logger.getLogger(FlightSchedules_Admin.class.getName()).log(Level.SEVERE, null, ex);
-                                }
+                                          
                             
                         }
                         
@@ -288,6 +291,14 @@ public class FlightSchedules_Admin extends javax.swing.JFrame {
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox1ItemStateChanged
+
+        jTextField1.setText(null);
+        jTextField2.setText(null);
+        jTextField3.setText(null);// TODO add your handling code here:
+        jTextField7.setText(null);
+    }//GEN-LAST:event_jComboBox1ItemStateChanged
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
