@@ -238,9 +238,10 @@ public class FirstWindow extends javax.swing.JFrame {
                 Logger.getLogger(FirstWindow.class.getName()).log(Level.SEVERE, null, ex);
             }
             while (rs.next())
-            { String userName=rs.getString("user");
-            String passWord= rs.getString("password");
-            if (login.equalsIgnoreCase(userName) && passWord.equals(key))
+            {  
+                String userName=rs.getString("user");
+                String passWord= rs.getString("password");
+                if (login.equalsIgnoreCase(userName) && passWord.equals(key))
             {
                //String name =rs.getString("username");
                this.dispose();
