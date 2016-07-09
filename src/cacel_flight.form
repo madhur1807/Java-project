@@ -113,15 +113,26 @@
     <Component class="javax.swing.JComboBox" name="jComboBox1">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="F001"/>
-            <StringItem index="1" value="F002"/>
-            <StringItem index="2" value="F003"/>
-            <StringItem index="3" value="F004"/>
+          <StringArray count="14">
+            <StringItem index="0" value="Select"/>
+            <StringItem index="1" value="F001"/>
+            <StringItem index="2" value="F002"/>
+            <StringItem index="3" value="F003"/>
+            <StringItem index="4" value="F004"/>
+            <StringItem index="5" value="F005"/>
+            <StringItem index="6" value="F006"/>
+            <StringItem index="7" value="F007"/>
+            <StringItem index="8" value="F008"/>
+            <StringItem index="9" value="F009"/>
+            <StringItem index="10" value="F010"/>
+            <StringItem index="11" value="F011"/>
+            <StringItem index="12" value="F012"/>
+            <StringItem index="13" value=" "/>
           </StringArray>
         </Property>
       </Properties>
       <Events>
+        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jComboBox1ItemStateChanged"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
       </Events>
     </Component>

@@ -52,7 +52,12 @@ public class cacel_flight extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "F001", "F002", "F003", "F004" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select", "F001", "F002", "F003", "F004", "F005", "F006", "F007", "F008", "F009", "F010", "F011", "F012", " " }));
+        jComboBox1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox1ItemStateChanged(evt);
+            }
+        });
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -194,7 +199,41 @@ public class cacel_flight extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
- 
+        
+        String id = (String)jComboBox1.getSelectedItem();
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(cacel_flight.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        Connection con = null ;
+        
+        try {
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airline", "root" ,"");
+        } catch (SQLException ex) {
+            Logger.getLogger(cacel_flight.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        Statement st = null ;
+        
+        try {
+            st = con.createStatement();
+        } catch (SQLException ex) {
+            Logger.getLogger(cacel_flight.class.getName()).log(Level.SEVERE, null, ex);
+        }
+          String load = "Delete from flight_details where Flight_ID='" + id + "' ";
+        try {
+            st.executeUpdate(load);
+        } catch (SQLException ex) {
+            Logger.getLogger(cacel_flight.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        this.dispose();
+        new Warning().setVisible(true);
+        
+        
+        
                         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -263,6 +302,14 @@ public class cacel_flight extends javax.swing.JFrame {
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox1ItemStateChanged
+            jTextField1.setText(null);
+            jTextField2.setText(null);
+            jTextField3.setText(null);
+            jTextField4.setText(null);
+    // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ItemStateChanged
 
     /**
      * @param args the command line arguments

@@ -61,7 +61,7 @@ CREATE TABLE `flight_details` (
 
 LOCK TABLES `flight_details` WRITE;
 /*!40000 ALTER TABLE `flight_details` DISABLE KEYS */;
-INSERT INTO `flight_details` VALUES ('Delhi','Mumabai','1800','1500',3000,'F001'),('Delhi','Bangalore','2000','2100',5000,'F002'),('Delhi','Jaipur','800','1000',6500,'F003'),('Mumbai','Delhi','1000','1200',7000,'F004'),('Mumbai','Bangalore','1000','100',5500,'F005'),('Mumbai','Jaipur','1000','1200',7000,'F006'),('Jaipur','Delhi','2100','2300',7800,'F007'),('Jaipur','Mumabi','1900','2100',7200,'F008'),('Jaipur','Bangalore','1700','1900',5900,'F009'),('Bangalore','Delhi','1400','1700',5500,'F010'),('Bangalore','Mumbai','1200','1400',9700,'F011'),('Bangalore','Jaipur','900','1200',9200,'F012');
+INSERT INTO `flight_details` VALUES ('Delhi','Mumbai','1800','1500',3000,'F001'),('Delhi','Bangalore','2000','2100',5000,'F002'),('Delhi','Jaipur','800','1000',6500,'F003'),('Mumbai','Delhi','1000','1200',7000,'F004'),('Mumbai','Bangalore','1000','100',5500,'F005'),('Mumbai','Jaipur','1000','1200',7000,'F006'),('Jaipur','Delhi','2100','2300',7800,'F007'),('Jaipur','Mumabi','1900','2100',7200,'F008'),('Jaipur','Bangalore','1700','1900',5900,'F009'),('Bangalore','Delhi','1400','1700',5500,'F010'),('Bangalore','Mumbai','1200','1400',9700,'F011'),('Bangalore','Jaipur','900','1200',6500,'F012');
 /*!40000 ALTER TABLE `flight_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -100,4 +100,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-07-08  7:20:09
+-- Dump completed on 2016-07-09  2:23:15

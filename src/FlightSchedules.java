@@ -53,6 +53,11 @@ public class FlightSchedules extends javax.swing.JFrame {
         });
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mumbai", "Delhi", "Jaipur", "Bangalore" }));
+        jComboBox2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox2ItemStateChanged(evt);
+            }
+        });
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
@@ -155,8 +160,7 @@ public class FlightSchedules extends javax.swing.JFrame {
                                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
@@ -244,7 +248,7 @@ public class FlightSchedules extends javax.swing.JFrame {
                 String load = "Select * from flight_details where source='" + source + "' and destination='" + destination + "' ";
                 rs = st.executeQuery(load);
             } catch (SQLException ex) {
-                Logger.getLogger(FlightSchedules_Admin.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(FlightSchedules.class.getName()).log(Level.SEVERE, null, ex);
             }
             while (rs.next())
             {
@@ -262,13 +266,13 @@ public class FlightSchedules extends javax.swing.JFrame {
                     String f_id = rs.getString("Flight_ID");
                     
                 } catch (SQLException ex) {
-                    Logger.getLogger(FlightSchedules_Admin.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(FlightSchedules.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(FlightSchedules_Admin.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FlightSchedules.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -279,6 +283,12 @@ public class FlightSchedules extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jComboBox2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox2ItemStateChanged
+        jTextField1.setText(null);
+        jTextField2.setText(null);
+        jTextField7.setText(null);       // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2ItemStateChanged
            
            
     
