@@ -150,6 +150,9 @@
     <Component class="javax.swing.JTextField" name="source">
     </Component>
     <Component class="javax.swing.JTextField" name="destination">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="destinationActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="fare">
     </Component>

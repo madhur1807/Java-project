@@ -15,13 +15,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 public class FlightSchedules extends javax.swing.JFrame implements Printable,ActionListener {
 
@@ -39,8 +35,24 @@ public class FlightSchedules extends javax.swing.JFrame implements Printable,Act
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField4 = new javax.swing.JTextField();
-        jFrame1 = new javax.swing.JFrame();
+        jFrame2 = new javax.swing.JFrame();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        source = new javax.swing.JTextField();
+        destination = new javax.swing.JTextField();
+        fare = new javax.swing.JTextField();
+        arrival = new javax.swing.JTextField();
+        departure = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
         jComboBox2 = new javax.swing.JComboBox();
@@ -56,17 +68,160 @@ public class FlightSchedules extends javax.swing.JFrame implements Printable,Act
         jLabel2 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
 
-        jTextField4.setText("jTextField4");
+        jFrame2.setMinimumSize(new java.awt.Dimension(500, 300));
+        jFrame2.setPreferredSize(new java.awt.Dimension(504, 282));
 
-        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
-        jFrame1.getContentPane().setLayout(jFrame1Layout);
-        jFrame1Layout.setHorizontalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        jLabel1.setText("Name");
+
+        jLabel4.setText("Email Id");
+
+        jLabel9.setText("Phone No");
+
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
+
+        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField8ActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("Source");
+
+        jLabel11.setText("Destination");
+
+        jLabel12.setText("Fare");
+
+        jLabel13.setText("Arrival");
+
+        jLabel14.setText("Departure");
+
+        destination.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                destinationActionPerformed(evt);
+            }
+        });
+
+        fare.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fareActionPerformed(evt);
+            }
+        });
+
+        arrival.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                arrivalActionPerformed(evt);
+            }
+        });
+
+        jButton4.setText("Submit");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jFrame2Layout = new javax.swing.GroupLayout(jFrame2.getContentPane());
+        jFrame2.getContentPane().setLayout(jFrame2Layout);
+        jFrame2Layout.setHorizontalGroup(
+            jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame2Layout.createSequentialGroup()
+                .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jFrame2Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jFrame2Layout.createSequentialGroup()
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jFrame2Layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jFrame2Layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addGap(18, 18, 18)
+                                .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton4)
+                                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 228, Short.MAX_VALUE)
+                        .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(arrival, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fare, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(destination, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrame2Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jFrame2Layout.createSequentialGroup()
+                                .addGap(128, 128, 128)
+                                .addComponent(source, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel11)
+                                .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE))
+                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrame2Layout.createSequentialGroup()
+                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(departure, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(20, 20, 20))
         );
-        jFrame1Layout.setVerticalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        jFrame2Layout.setVerticalGroup(
+            jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame2Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(source, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jFrame2Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel11)
+                                .addComponent(destination, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jFrame2Layout.createSequentialGroup()
+                        .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jFrame2Layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jFrame2Layout.createSequentialGroup()
+                                        .addGap(3, 3, 3)
+                                        .addComponent(jLabel4))))
+                            .addGroup(jFrame2Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(fare, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(15, 15, 15))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrame2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel12)
+                        .addGap(18, 18, 18)))
+                .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jFrame2Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel9))
+                    .addGroup(jFrame2Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13)))
+                    .addComponent(arrival, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(departure, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addComponent(jButton4)
+                .addGap(24, 24, 24))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -213,7 +368,7 @@ public class FlightSchedules extends javax.swing.JFrame implements Printable,Act
                     .addComponent(jLabel6)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(59, 59, 59)
+                .addGap(71, 71, 71)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -255,53 +410,70 @@ public class FlightSchedules extends javax.swing.JFrame implements Printable,Act
            
          try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airline", "root" ,"");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airline", "root" ,"12345");
          
-           
-           PreparedStatement st= con.prepareStatement("Insert into booking values(?,?,?,?,?,?,?,?)");
-            st.setString(1,(String)jComboBox1.getSelectedItem());
-            st.setString(2,(String)jComboBox2.getSelectedItem());
-            st.setString(3,jTextField1.getText());
-            st.setString(4,jTextField2.getText());
-            st.setString(5,jTextField7.getText());
-            st.setString(6,"");
-            st.setString(7,"");
-            st.setString(8,"");//String idOne = UUID.randomUUID().toString();
+          
+           PreparedStatement st= con.prepareStatement("Insert into booking_details values(?,?,?,?,?,?,?,?)");
+            String sr1=(String)jComboBox1.getSelectedItem();
+            String sr2=(String)jComboBox2.getSelectedItem();
+            st.setString(4,sr1);
+            st.setString(5,sr2);
+            st.setString(7,jTextField1.getText());
+            st.setString(6,jTextField2.getText());
+            st.setString(8,jTextField7.getText());
+            st.setString(1,null);
+            st.setString(2,null);
+            st.setString(3,null);
+            //String idOne = UUID.randomUUID().toString();
             //st.setString(6,idOne);
             st.execute();
-            String srce = (String)jComboBox1.getSelectedItem();
-            String destin = (String)jComboBox2.getSelectedItem();
-            String load = "Select arrival,departure,source,destination,fare from booking where source='" + srce + "' and destination='" + destin + "' ";
-             ResultSet qrs =null ;   
-            qrs = st.executeQuery(load);
-            while (qrs.next())
+         Statement qst=null;
+         ResultSet rs=null;
+          this.dispose();
+         jFrame2.setVisible(true);
+            
+            /*    String lo = "Select * from flight_details where source='" + sr1 + "' and destination='" + sr2 + "' ";
+        try {
+            rs = qst.executeQuery(lo);
+        } catch (SQLException ex) {
+            Logger.getLogger(booking_window.class.getName()).log(Level.SEVERE, null, ex);
+        }
+             
+        try {
+            while (rs.next())
             {
 
-                String item_text_src = qrs.getString("source");
-                String item_text_des = qrs.getString("destination");
+                String item_text_src = rs.getString("source");
+                String item_text_des = rs.getString("destination");
 
-               /* try {
-                    String arriv = qrs.getString("arrival");
-                    
-                    String depart = rs.getString("departure");
-                    jTextField2.setText(depart);
+                try {
+                    String arriv = rs.getString("arrival");
+                    arrival.setText(arriv);
+                    String departu = rs.getString("departure");
+                    departure.setText(departu);
                     String far = rs.getString("fare");
-                    jTextField7.setText(far);
-                    String f_id = rs.getString("Flight_ID");
-                    
-                    
-                } catch (SQLException ex) {
+                    fare.setText(far);
+                    String so = rs.getString("source");
+                    source.setText(so);
+                    String de =rs.getString("destination");
+                    destination.setText(de);
+                      } catch (SQLException ex) {
                     Logger.getLogger(FlightSchedules.class.getName()).log(Level.SEVERE, null, ex);
-                }*/
-            }
-            this.dispose();
-            new booking_window(srce, destin).setVisible(true);
-            } catch (ClassNotFoundException ex) {
+                }
+            
+            }   }
+                  catch (SQLException ex) {
+            Logger.getLogger(booking_window.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
+ 
+            
+            }catch (ClassNotFoundException ex) {
             Logger.getLogger(SignUp.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
            // jLabel8.setText("Username not available");
             Logger.getLogger(SignUp.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -319,7 +491,7 @@ public class FlightSchedules extends javax.swing.JFrame implements Printable,Act
             Connection con= null;
 
             try {
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airline", "root" ,"");
+                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airline", "root" ,"12345");
             } catch (SQLException ex) {
                 Logger.getLogger(FirstWindow.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -395,8 +567,92 @@ public class FlightSchedules extends javax.swing.JFrame implements Printable,Act
          }
         
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField8ActionPerformed
+
+    private void arrivalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arrivalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_arrivalActionPerformed
+
+    private void destinationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_destinationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_destinationActionPerformed
+
+    private void fareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fareActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fareActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+         try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airline", "root" ,"12345");
+            PreparedStatement st= con.prepareStatement("Insert into booking_details values(?,?,?,?,?,?,?,?) where source ='" +source+ "' and destination ='"+ destination +"'" );
+            st.setString(1,jTextField5.getText());
+            st.setString(2,jTextField6.getText());
+            st.setString(3,jTextField8.getText());
+            st.setString(4,"");
+            st.setString(5,"");
+            st.setString(6,"");
+            st.setString(7,"");
+            st.setString(8,"");
+            //String idOne = UUID.randomUUID().toString();
+            //st.setString(6,idOne);
+            st.execute();
+       /*  Statement qst=null;
+         ResultSet rs=null;
+            
+                String lo = "Select * from flight_details where source='" + sr1 + "' and destination='" + sr2 + "' ";
+        try {
+            rs = qst.executeQuery(lo);
+        } catch (SQLException ex) {
+            Logger.getLogger(booking_window.class.getName()).log(Level.SEVERE, null, ex);
+        }
+             
+        try {
+            while (rs.next())
+            {
+
+            //    String item_text_src = rs.getString("source");
+              //  String item_text_des = rs.getString("destination");
+
+                try {
+                    String arriv = rs.getString("arrival");
+                    arrival.setText(arriv);
+                    String departu = rs.getString("departure");
+                    departure.setText(departu);
+                    String far = rs.getString("fare");
+                    fare.setText(far);
+                    String so = rs.getString("source");
+                    source.setText(so);
+                    String de =rs.getString("destination");
+                    destination.setText(de);
+                      } catch (SQLException ex) {
+                    Logger.getLogger(FlightSchedules.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            
+            }   }
+                  catch (SQLException ex) {
+            Logger.getLogger(booking_window.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
+ 
+            
+            }catch (ClassNotFoundException ex) {
+            Logger.getLogger(SignUp.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+           // jLabel8.setText("Username not available");
+            Logger.getLogger(SignUp.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
            
         
+    @Override
      public int print(Graphics g, PageFormat pf, int page) throws
                                                         PrinterException {
 
@@ -429,26 +685,46 @@ public class FlightSchedules extends javax.swing.JFrame implements Printable,Act
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField arrival;
+    private javax.swing.JTextField departure;
+    private javax.swing.JTextField destination;
+    private javax.swing.JTextField fare;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
-    private javax.swing.JFrame jFrame1;
+    private javax.swing.JFrame jFrame2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField source;
     // End of variables declaration//GEN-END:variables
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private Object jFrame2() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

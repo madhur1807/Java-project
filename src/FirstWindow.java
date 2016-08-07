@@ -228,7 +228,7 @@ public class FirstWindow extends javax.swing.JFrame {
             }
             Connection con= null;
             try {
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airline", "root" ,"");
+                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airline", "root" ,"12345");
             } catch (SQLException ex) {
                 Logger.getLogger(FirstWindow.class.getName()).log(Level.SEVERE, null, ex);
             }
